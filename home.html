@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home - DCM Crowd Capacity Calculator</title>
+    <meta property="og:title" content="Home - DCM Crowd Capacity Calculator" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+    <style>
+      @keyframes fade-in-left {
+        0% {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <link rel="stylesheet" href="./style.css" />
+    <div>
+      <link href="./home.css" rel="stylesheet" />
+
+      <div class="home-container">
+        <div class="home-header">
+          <button type="button" class="home-button button">Contact Us</button>
+          <img alt="image" src="public/logo-200h.webp" class="home-image" />
+        </div>
+        <div class="home-banner"></div>
+        <div class="home-container1"></div>
+        <div class="home-details">
+          <div class="home-details1">
+            <div class="home-container2">
+              <h2 class="home-details-heading heading2">
+                <span class="home-text">
+                  Simplifing crowd management planning
+                </span>
+                <br class="home-text01" />
+              </h2>
+              <span class="home-details-sub-heading">
+                <span class="home-text02">
+                  The Green guide © is the global standard for the assessment of
+                  safe capacity at sports grounds.&nbsp;&nbsp;
+                </span>
+                <br class="home-text03" />
+                <br class="home-text04" />
+                <span class="home-text05">
+                  First published by the SGSA in 1973, the 6th Edition was
+                  published in 2018 and the current version.&nbsp;It is the
+                  foundation logic of developing a safe capacity .
+                </span>
+                <br class="home-text06" />
+                <br class="home-text07" />
+                <span class="home-text08">
+                  The green guide process is supported by the following manual
+                  table.
+                </span>
+                <br class="home-text09" />
+                <br class="home-text10" />
+                <br class="home-text11" />
+                <br class="home-text12" />
+                <br class="home-text13" />
+                <br class="home-text14" />
+                <br class="home-text15" />
+              </span>
+              <div>
+                <div class="home-container4">
+                  <button ondblclick="fun()">click me !</button>
+
+                  <script>
+                    function pushJSON() {
+                    var raw = JSON.stringify({
+                      'name': 'David R',
+                      'email': 'driddolls@acesecurity.com.au',
+                      'eventName': 'J Chou',
+                      'eventDate': '2023-12-21'
+                    });
+
+                    var requestOptions = {
+                      method: 'POST',
+                       headers:
+                        {'Content-Type': 'application/json'}
+                      body: raw
+                    };
+
+                    fetch('https://webhook.workflow86.com/webhook/fa445a08-5cda-4f43-a2f7-f0b77a8c46f1?token=L1zDwCOOeMaezuQZvfAjzpfMERSzDuDXyfBWA82loc9WCiuDCDSpOgZRKbu2LUJe', requestOptions)
+                     .then(res => {return  res.clone().json().catch(() => res.text());})
+                      .then(result => console.log(result))
+                      .catch(error => console.log('error', error));
+                    }
+                  </script>
+                </div>
+              </div>
+              <div>
+                <div class="home-container6">
+                  import requests import json def send_data(data): url =
+                  'https://webhook.workflow86.com/webhook/fa445a08-5cda-4f43-a2f7-f0b77a8c46f1?token=L1zDwCOOeMaezuQZvfAjzpfMERSzDuDXyfBWA82loc9WCiuDCDSpOgZRKbu2LUJe'
+                  headers = {'Content-Type': 'application/json'} response =
+                  requests.post(url, data=json.dumps(data), headers=headers)
+                  return response.text data = { 'name': 'David R', 'email':
+                  'driddolls@acesecurity.com.au', 'eventName': 'J Chou',
+                  'eventDate': '2023-12-21' } send_data(data)
+                </div>
+              </div>
+              <button type="button" class="button">Button</button>
+              <div>
+                <div class="home-container8">
+                  console.log('from script file'); 1 var raw = JSON.stringify({
+                  2 'name': 'David R', 3 'email':
+                  'driddolls@acesecurity.com.au', 4 'eventName': 'J Chou', 5
+                  'eventDate': '2023-12-21' 6 }); 7 8 var requestOptions = { 9
+                  method: 'POST', 10 headers: 11 { 'Content-Type':
+                  'application/json' } 12 body: raw 13 }; 14 15
+                  fetch('https://webhook.workflow86.com/webhook/fa445a08-5cda-4f43-a2f7-f0b77a8c46f1?token=L1zDwCOOeMaezuQZvfAjzpfMERSzDuDXyfBWA82loc9WCiuDCDSpOgZRKbu2LUJe',
+                  requestOptions) 16 .then(res =&gt; { return
+                  res.clone().json().catch(() =&gt; res.text()); }) 17
+                  .then(result =&gt; console.log(result)) 18 .catch(error =&gt;
+                  console.log('error', error));
+                </div>
+              </div>
+            </div>
+            <button type="button" class="home-button2 button">
+              Get Started
+            </button>
+          </div>
+          <div class="home-banner1">
+            <span class="home-text16">
+              <span>Note</span>
+              <br />
+              <br />
+              <span>
+                Uusing this automated assessment guide does not change any of
+                the rules or requirements as set out in the green guide 6th
+                edition, it just saves you using a spread sheet and deciding on
+                the lowest factor.
+              </span>
+              <br />
+              <br />
+              <span>
+                Once you have done your pre planning feel free to continue with
+                Dynamic Crowd Measurement to provide in the moment real time
+                crowd density data, flow speed and crowd mood data to understand
+                your visitor experience and where and when intervention can
+                support maintaining neutral and positive moods.
+              </span>
+              <br />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      data-section-id="navbar"
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script>
+  </body>
+</html>

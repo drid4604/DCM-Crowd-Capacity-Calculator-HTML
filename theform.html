@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>theform - DCM Crowd Capacity Calculator</title>
+    <meta
+      property="og:title"
+      content="theform - DCM Crowd Capacity Calculator"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+    <style>
+      @keyframes fade-in-left {
+        0% {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <link rel="stylesheet" href="./style.css" />
+    <div>
+      <link href="./theform.css" rel="stylesheet" />
+
+      <div class="theform-container">
+        <div class="theform-header">
+          <img
+            alt="pastedImage"
+            src="public/external/pastedimage-scpp-200h.png"
+            class="theform-pasted-image"
+          />
+          <a href="theform.html" class="theform-navlink button">CONTACT US</a>
+        </div>
+        <div class="theform-container1">
+          <div class="theform-container2"></div>
+          <h1 class="theform-text">
+            <span>Green Guide</span>
+            <br />
+            <span class="theform-text3">Safe holding capacity calculator</span>
+            <br />
+          </h1>
+          <div class="theform-container3">
+            <div class="theform-container4">
+              <style>
+                @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+
+                * {
+                    box-sizing: border-box;
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 1em;
+                    color: #FFFFFF;
+                    /* Sets the default text color to white for all elements */
+                }
+
+                body {
+                    background-color: rgba(0, 0, 0, 0.75);
+                    margin: 0;
+                    /* Resets default margin */
+                    padding: 0;
+                    /* Remove padding if unwanted */
+                    height: 100vh;
+                    /* Full viewport height */
+                }
+
+                .form-container {
+                    width: 60%;
+                    margin: auto;
+                    /* Center the container */
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    /* Center the items vertically */
+                }
+
+                .hidden {
+                    display: none;
+                }
+
+                h2 {
+                    font-size: 1.5em;
+                    text-align: center;
+                }
+
+                .input-wrapper {
+                    background-color: rgba(150, 150, 150, 0.4);
+                    /* Black background with 25% transparency */
+                    border: 2px solid #FFFFFF;
+                    /* Black border around input */
+                    width: 50%;
+                    /* Set wrapper width */
+                    margin-bottom: 10px;
+                    /* Space after wrapper */
+                }
+
+                input[type='number'] {
+                    width: 50%;
+                    /* Full width of the container */
+                    padding: 10px;
+                    font-size: 1em;
+                    margin: 0;
+                    border: none;
+                    background-color: rgba(100, 100, 100, 0.4);
+                    color: #FFFFFF;
+                }
+
+                .results-container {
+                    margin-left: 50px;
+                    max-width: 800px;
+                    /* Adjust the width as needed */
+                    padding: 20px;
+                    background-color: rgba(244, 244, 244, 0.3);
+                    /* Light background for the container */
+                    border-radius: 10px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                }
+
+                .results-container h2 {
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+
+                #resultTable {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-bottom: 20px;
+                }
+
+                #resultTable th,
+                #resultTable td {
+                    border: 1px solid #ddd;
+                    padding: 12px;
+                    text-align: left;
+                }
+
+                #resultTable th {
+                    background-color: #4CAF50;
+                    color: white;
+                }
+
+                .button-container {
+                    text-align: center;
+                    margin-top: 20px;
+                }
+
+                .button-container button {
+                    padding: 10px 20px;
+                    background-color: #4CAF50;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                #resultTable thead th {
+                    background-color: inherit !important;
+                }
+
+                .button-container button:hover {
+                    background-color: #367c39;
+                }
+
+                input[type='number'],
+                input[type='text'],
+                input[type='radio'] {
+                    border-radius: 5px;
+                    background-color: rgba(0, 0, 0, 0.7);
+                }
+
+                input[type='radio'] {
+                    border: 1px solid #000;
+                    margin-right: 5px;
+                }
+
+                input[type='number'],
+                input[type='text'],
+                input[type='radio'] {
+
+                    /* Black text color for input elements */
+                    background-color: rgba(150, 150, 150, 0.4);
+                    /* Lighter grey background */
+
+                    border-radius: 5px;
+
+                }
+
+                .no-bg {
+                    background-color: transparent !important;
+                }
+
+                button {
+                    background-color: #ffa500;
+                    /* ??  orange button background */
+                    border: 1px solid #fff;
+                    padding: 10px 20px;
+                    cursor: pointer;
+                    font-size: 1em;
+                    width: auto;
+                    /* Allow button to shrink-wrap its content */
+                    margin-top: 20px;
+                    /* Space above the button */
+                }
+
+                button:disabled {
+                    cursor: not-allowed;
+                }
+
+                #holdingCapacity {
+                    background-color: #5F5F5F;
+                }
+
+                #appropriateDensity {
+                    background-color: #5F5F5F;
+                }
+
+                .half-width {
+                    width: 50%;
+                    /* Set the table width to 50% of its container */
+                    margin: 0 auto;
+                    /* Center the table horizontally */
+                    max-width: 400px;
+                    /* Adjust the maximum width as needed */
+                }
+
+                input[type='text'],
+                input[type='email'] {
+                    background-color: white;
+                    color: black;
+                    border: 1px solid #ccc;
+                    padding: 5px;
+                    margin: 5px;
+                    border-radius: 5px;
+                }
+              </style>
+
+              <div id="page0" style="text-align: center;">
+                <br />
+                <br />
+                <br />
+                <br />
+                <div>
+                  <br />
+                  <br />
+                  <br />
+                  <label>Name</label>
+                  <br />
+                  <input
+                    type="text"
+                    id="name"
+                    onchange="validateInputsForm0()"
+                    required=""
+                  />
+                  <br />
+                  <br />
+                  <br />
+                  <label>Email address</label>
+                  <br />
+                  <input
+                    type="email"
+                    id="email"
+                    onchange="validateInputsForm0()"
+                    required=""
+                  />
+                  <br />
+                  <br />
+                  <br />
+                  <label>Event name</label>
+                  <br />
+                  <input type="text" id="event" />
+                  <br />
+                  <br />
+                  <br />
+                  <label>Area to model</label>
+                  <br />
+                  <input
+                    type="text"
+                    id="area"
+                    onchange="validateInputsForm0()"
+                    required=""
+                  />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <button
+                    id="to_page1"
+                    onclick="checkAndChangeScreen("
+                    page0&#x27;);=""
+                    senddata();&#x27;=""
+                    disabled=""
+                    style="cursor: not-allowed;"
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+              <div id="page1" class="hidden" style="margin-left: 50px;">
+                <br />
+                <br />
+                <br />
+                <h2>Holding Capacity Calculation</h2>
+                <br />
+                <br />
+                <label>Accommodation Type:</label>
+                <br />
+                <input
+                  type="radio"
+                  name="accommodationType"
+                  id="standing"
+                  value="standing"
+                  onclick="displayFields("
+                  standinginputs&#x27;)&#x27;=""
+                />
+                Standing
+                <br />
+                <input
+                  type="radio"
+                  name="accommodationType"
+                  id="sitting"
+                  value="sitting"
+                  onclick="displayFields("
+                  sittinginputs&#x27;)&#x27;=""
+                />
+                Sitting
+                <br />
+                <br />
+
+                <div id="factorInputs" style="display: none;">
+                  <label>Physical factor (P):</label>
+                  <br />
+                  <input
+                    type="number"
+                    id="physicalFactor"
+                    min="0.01"
+                    max="1"
+                    step="0.01"
+                    onchange="validateFactor("
+                    physicalfactor&#x27;,=""
+                    &#x27;physicalfactorerror&#x27;,=""
+                    0.01,=""
+                    1)&#x27;=""
+                  />
+                  <br />
+                  <span
+                    id="physicalFactorError"
+                    style="color: red; display: none;"
+                  >
+                    Input must be between 0.01 and 1
+                  </span>
+                  <br />
+
+                  <label>Safety factor (S):</label>
+                  <br />
+                  <input
+                    type="number"
+                    id="safetyFactor"
+                    min="0.01"
+                    max="1"
+                    step="0.01"
+                    onchange="validateFactor("
+                    safetyfactor&#x27;,=""
+                    &#x27;safetyfactorerror&#x27;,=""
+                    0.01,=""
+                    1)&#x27;=""
+                  />
+                  <br />
+                  <span
+                    id="safetyFactorError"
+                    style="color: red; display: none;"
+                  >
+                    Input must be between 0.01 and 1
+                  </span>
+                  <br />
+                </div>
+
+                <div id="standingInputs" class="hidden">
+                  <label>
+                    Viewing Area (m
+                    <sup>2</sup>
+                    ):
+                  </label>
+                  <br />
+                  <input
+                    type="number"
+                    id="viewingArea"
+                    oninput="calculateHoldingCapacityForStanding()"
+                  />
+                  <br />
+                  <br />
+
+                  <label>
+                    Maximum Density (pp/m
+                    <sup>2</sup>
+                    ):
+                  </label>
+                  <br />
+                  <input
+                    type="number"
+                    id="maxDensity"
+                    onchange="validateMaxDensity()"
+                  />
+                  <br />
+                  <span id="maxDensityError" style="color: red; display: none;">
+                    Input must be between 0.01 and 4.7
+                  </span>
+                  <br />
+
+                  <label>
+                    Appropriate Density (pp/m
+                    <sup>2</sup>
+                    ):
+                  </label>
+                  <br />
+                  <input type="number" id="appropriateDensity" readonly="" />
+                  <br />
+                  <br />
+                </div>
+
+                <div id="sittingInputs" class="hidden">
+                  <label>Number of usable Seats:</label>
+                  <br />
+                  <input
+                    type="number"
+                    id="numSeats"
+                    step="1"
+                    pattern="[0-9]*"
+                    onchange="validateNumSeats()"
+                  />
+                  <br />
+                  <span id="numSeatsError" style="color: red; display: none;">
+                    Number of seats must be greater than 0
+                  </span>
+                  <br />
+                </div>
+
+                <label>
+                  Holding Capacity (pp/m
+                  <sup>2</sup>
+                  ):
+                </label>
+                <br />
+                <input type="number" id="holdingCapacity" readonly="" />
+                <br />
+                <br />
+                <br />
+                <button
+                  id="to_page2"
+                  onclick="checkAndChangeScreen("
+                  page1&#x27;)&#x27;=""
+                  disabled=""
+                >
+                  Next
+                </button>
+                <span id="nextButtonError" style="color: red; display: none;">
+                  Please fill all required fields
+                </span>
+                <br />
+                <br />
+              </div>
+
+              <div id="page2" class="hidden" style="margin-left: 50px;">
+                <br />
+                <br />
+                <h2>Entry Capacity Calulation</h2>
+                <br />
+                <br />
+                <br />
+                <br />
+                <label>Are turnstiles used at entrances?</label>
+                <br />
+
+                <input
+                  type="radio"
+                  name="turnstileUsed"
+                  id="yesTurnstile"
+                  value="yes"
+                  onclick="handleTurnstileSelection("
+                  yes&#x27;)&#x27;=""
+                />
+                Yes
+                <br />
+                <input
+                  type="radio"
+                  name="turnstileUsed"
+                  id="noTurnstile"
+                  value="no"
+                  onclick="handleTurnstileSelection("
+                  no&#x27;)&#x27;=""
+                />
+                No
+                <br />
+                <br />
+                <div id="turnstileInputs" class="hidden">
+                  <br />
+                  <label>Number of turnstiles :</label>
+                  <br />
+                  <input
+                    type="number"
+                    id="numTurnstile"
+                    onchange="validateTurnstileInputs()"
+                  />
+                  <br />
+                  <span
+                    id="numTurnstileError"
+                    style="color: red; display: none;"
+                  >
+                    Number of turnstiles must be greater than 0
+                  </span>
+                  <br />
+
+                  <br />
+                  <label>Turnstile flow rate (pp/min) :</label>
+                  <br />
+                  <input
+                    type="number"
+                    id="turnstileFlowRate"
+                    onchange="validateTurnstileInputs()"
+                  />
+                  <br />
+                  <span
+                    id="turnstileFlowRateError"
+                    style="color: red; display: none;"
+                  >
+                    Flow rate must be between 1 and 11
+                  </span>
+                  <br />
+
+                  <br />
+                </div>
+
+                <div id="regularInputs" class="hidden">
+                  <label>Cumulative entry width (m):</label>
+                  <br />
+                  <input
+                    type="number"
+                    id="entryWidth"
+                    onchange="validateRegularInputs()"
+                  />
+                  <br />
+                  <span id="entryWidthError" style="color: red; display: none;">
+                    Width must be greater than 0
+                  </span>
+                  <br />
+                  <label>Flow rate (pp/min):</label>
+                  <br />
+                  <input
+                    type="number"
+                    id="entryFlowRate"
+                    onchange="validateRegularInputs()"
+                  />
+                  <br />
+                  <span
+                    id="entryFlowRateError"
+                    style="color: red; display: none;"
+                  >
+                    Flow rate must be greater than 0 and less than or equal to
+                    109
+                  </span>
+                  <br />
+                </div>
+                <label>Entry Capacity (pp/hour):</label>
+                <br />
+                <input type="number" id="entryCapacity" readonly="" />
+                <br />
+                <br />
+                <br />
+                <br />
+                <button
+                  id="to_page1"
+                  onclick="changeScreen("
+                  page1&#x27;)&#x27;=""
+                >
+                  Prev
+                </button>
+                <button
+                  id="to_page3"
+                  onclick="checkAndChangeScreen("
+                  page2&#x27;)&#x27;=""
+                  disabled=""
+                >
+                  Next
+                </button>
+              </div>
+              <div id="page3" class="hidden" style="margin-left: 50px;">
+                <br />
+                <br />
+                <h2>Exit Capacity Calculation</h2>
+                <br />
+                <br />
+                <br />
+                <label>Cumulative exit width (m):</label>
+                <br />
+                <input
+                  type="number"
+                  id="exitWidth"
+                  oninput="validateExitWidth(); calculateExitCapacity();"
+                />
+                <span id="exitWidthError" style="color: red; display: none;">
+                  Exit width must be greater than 0
+                </span>
+                <br />
+                <br />
+                <label>Flow rate :</label>
+                <br />
+                <input
+                  type="radio"
+                  name="exitFlowRate"
+                  value="66"
+                  onchange="onExitFlowRateChange(this)"
+                />
+                Stairs - 66
+
+                <br />
+                <input
+                  type="radio"
+                  name="exitFlowRate"
+                  value="82"
+                  onchange="onExitFlowRateChange(this)"
+                />
+                Level terrain - 82
+
+                <br />
+                <input
+                  type="radio"
+                  name="exitFlowRate"
+                  value="custom"
+                  id="exitFlowRateCustom"
+                  onchange="onExitFlowRateChange(this)"
+                />
+                Custom
+                <br />
+                <br />
+                <div id="customExitFlowRateInput" class="hidden">
+                  <label>Custom Flow rate :</label>
+                  <br />
+                  <input
+                    type="number"
+                    id="customExitFlowRate"
+                    onchange="onCustomExitFlowRateChange()"
+                  />
+                  <span
+                    id="customExitFlowRateError"
+                    style="color: red; display: none;"
+                  >
+                    Flow rate must be between 1 and 109
+                  </span>
+                </div>
+                <br />
+                <label>Minutes for egress:</label>
+                <br />
+                <input
+                  type="number"
+                  id="egressMinutes"
+                  onchange="onEgressMinutesChange()"
+                />
+                <span
+                  id="egressMinutesError"
+                  style="color: red; display: none;"
+                >
+                  Minutes must be positive, and less than 8
+                </span>
+                <br />
+                <br />
+                <label>Exit Capacity :</label>
+                <br />
+                <input type="number" id="exitCapacity" readonly="" />
+                <br />
+                <br />
+                <br />
+                <button
+                  id="to_page2"
+                  onclick="changeScreen("
+                  page2&#x27;)&#x27;=""
+                >
+                  Prev
+                </button>
+                <button
+                  id="to_page4"
+                  onclick="checkAndChangeScreen("
+                  page3&#x27;)&#x27;=""
+                  disabled=""
+                >
+                  Next
+                </button>
+              </div>
+              <div id="page4" class="hidden" style="margin-left: 50px;">
+                <br />
+                <br />
+                <h2>Emergency Exit Capacity Calulation</h2>
+                <br />
+                <br />
+                <br />
+                <br />
+                <label>Cumulative width of emergency exit passages (m):</label>
+                <br />
+                <input
+                  type="number"
+                  id="emergencyExitWidth"
+                  onchange="validateEmergencyExitWidth();"
+                />
+                <span
+                  id="emergencyExitWidthError"
+                  class="error-message"
+                  style="color: red; display: none;"
+                >
+                  Width must be greater than 0
+                </span>
+                <br />
+                <br />
+                <label>Flow rate :</label>
+                <br />
+                <input
+                  type="radio"
+                  name="emergencyExitFlowRate"
+                  value="66"
+                  onchange="calculateEmergencyExitCapacity()"
+                />
+                Stairs - 66
+                <br />
+                <input
+                  type="radio"
+                  name="emergencyExitFlowRate"
+                  value="82"
+                  onchange="calculateEmergencyExitCapacity()"
+                />
+                Level terrain - 82
+                <br />
+                <input
+                  type="radio"
+                  name="emergencyExitFlowRate"
+                  value="custom"
+                  id="emergencyExitFlowRateCustom"
+                  onchange="toggleCustomEmergencyFlowRateInput(this.checked)"
+                />
+                Custom
+                <br />
+                <div id="customEmergencyExitFlowRateInput" class="hidden">
+                  <input
+                    type="number"
+                    id="customEmergencyExitFlowRate"
+                    onchange="validateCustomEmergencyExitFlowRate();"
+                    oninput="validateCustomEmergencyExitFlowRate();"
+                  />
+                  <span
+                    id="customEmergencyExitFlowRateError"
+                    style="color: red; display: none;"
+                  >
+                    Custom flow rate must be between 1 and 109 inclusive
+                  </span>
+                </div>
+                <br />
+                <br />
+                <label>Minutes for emergency exit :</label>
+                <br />
+                <input
+                  type="number"
+                  id="emergencyEgressMinutes"
+                  onchange="validateEmergencyEgressMinutes();"
+                />
+                <span id="emergencyEgressMinutesValidation" style="color: red;">
+                  <br />
+                  Minutes must be positive and less than 8
+                </span>
+                <br />
+                <br />
+                <label>Emergency Exit Capacity :</label>
+                <br />
+                <input type="number" id="emergencyExitCapacity" readonly="" />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <button
+                  id="to_page3"
+                  onclick="changeScreen("
+                  page3&#x27;);&#x27;=""
+                >
+                  Prev
+                </button>
+                <button
+                  id="to_page5"
+                  onclick="checkAndChangeScreen("
+                  page4&#x27;);&#x27;=""
+                  disabled=""
+                >
+                  Next
+                </button>
+              </div>
+              <div id="page5" class="hidden" style="margin-left: 50px;">
+                <br />
+                <br />
+                <h2>Final Results</h2>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <table id="resultTable" class="half-width">
+                  <thead>
+                    <tr>
+                      <th>Capacity Type</th>
+                      <th>Capacity Value</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="no-bg">Holding Capacity</td>
+                      <td id="holdingCapacityValue"></td>
+                    </tr>
+                    <tr>
+                      <td class="no-bg">Entry Capacity</td>
+                      <td id="entryCapacityValue"></td>
+                    </tr>
+                    <tr>
+                      <td class="no-bg">Exit Capacity</td>
+                      <td id="exitCapacityValue"></td>
+                    </tr>
+                    <tr>
+                      <td class="no-bg">Emergency Exit Capacity</td>
+                      <td id="emergencyExitCapacityValue"></td>
+                    </tr>
+                    <tr>
+                      <td class="no-bg">Minimum Capacity</td>
+                      <td id="minCapacityValue"></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br />
+                <p id="limitingFactorStatement"></p>
+                <br />
+                <button
+                  id="to_page4"
+                  onclick="changeScreen("
+                  page4&#x27;)&#x27;=""
+                >
+                  Prev
+                </button>
+              </div>
+
+              <script>
+                var entryCapacity = 0;
+                var finalHoldingCapacity = 0;
+                let globalHoldingCapacity = 0;
+                let globalEntryCapacity = 0;
+                let globalExitCapacity = 0;
+                let globalEmergencyExitCapacity = 0;
+                let name = '';
+                let area = '';
+                let email = '';
+                let event = '';
+                var finalExitCapacity = 0;
+                var finalEmergencyExitCapacity = 0;
+
+                function validateNumSeats(input) {
+                    const numSeats = input.value;
+                    if (numSeats === '') {
+                        document.getElementById('numSeatsError').textContent = 'Please enter a number of seats.';
+                    } else {
+                        const roundedNumSeats = Math.floor(Number(numSeats));
+                        if (isNaN(roundedNumSeats) || roundedNumSeats <= 0) {
+                            document.getElementById('numSeatsError').textContent = 'Please enter a valid whole number of seats greater than 0.';
+                            input.value = ''; // Clear the input field
+                        } else {
+                            document.getElementById('numSeatsError').textContent = ''; // Clear the error message
+                            input.value = roundedNumSeats; // Set the input value to the rounded number
+                        }
+                    }
+                }
+
+
+
+
+                function sendData() {
+                    var raw = JSON.stringify({
+                        'name': document.getElementById('name').value,
+                        'email': document.getElementById('email').value,
+                        'eventName': document.getElementById('eventName').value,
+                        'areaName': document.getElementById('area').value, // Corrected the ID from 'areaName' to 'area'
+                    });
+
+                    var requestOptions = {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: raw
+                    };
+
+                    fetch('https://webhook.workflow86.com/webhook/fa445a08-5cda-4f43-a2f7-f0b77a8c46f1?token=qFkk1h5e4XvxrN1cmKPiDar0aHHqDffjx2sOR1SvbDvaJJTOGEuU37HLsmTCcu70', requestOptions)
+                        .then(res => res.clone().json().catch(() => res.text()))
+                        .then(result => console.log(result))
+                        .catch(error => console.log('error', error));
+
+                    //checkAndChangeScreen('page1');
+                }
+                function validateEmergencyEgressMinutes() {
+
+                }
+
+                function validateInputsForm0() {
+                    var name = document.getElementById('name').value;
+                    var email = document.getElementById('email').value;
+                    var nextButton = document.getElementById('to_page1');
+
+                    // Check if name and email are valid
+                    var isNameValid = name.trim() !== '';
+                    var isEmailValid = validateEmail(email);
+
+                    // Enable the 'Next' button if both name and email are valid
+                    if (isNameValid && isEmailValid) {
+                        nextButton.disabled = false;
+                        nextButton.style.cursor = 'pointer';
+
+                        name = document.getElementById('name').value;
+                        email = document.getElementById('email').value;
+                        area = document.getElementById('area').value;
+                        event = document.getElementById('event').value;
+                    } else {
+                        nextButton.disabled = true;
+                        nextButton.style.cursor = 'not-allowed';
+                    }
+                }
+
+                function validateEmail(email) {
+                    // Regular expression to validate email address
+                    var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                    return email.match(emailRegex);
+                }
+
+                // Initialize the validation on page load
+                window.onload = function () {
+                    validateInputsForm0();
+                };
+                function validateFactor(factorId, errorId, min, max, callback) {
+                    const factorInput = document.getElementById(factorId);
+                    const errorSpan = document.getElementById(errorId);
+                    const value = parseFloat(factorInput.value);
+
+                    if (isNaN(value) || value < min || value > max) {
+                        errorSpan.style.display = 'block';
+                        factorInput.value = ''; // Clear invalid input
+                        clearHoldingCapacity(); // Reset holding capacity box
+                    } else {
+                        errorSpan.style.display = 'none';
+                        factorInput.value = value.toFixed(3); // Format to 4 decimal places
+                        if (callback) callback(); // Perform the calculation if valid
+                    }
+                }
+                function validateAndRoundInputValue(inputId, errorId, minValue, maxValue, callback) {
+                    const inputElement = document.getElementById(inputId);
+                    const errorElement = document.getElementById(errorId);
+
+                    // Get the raw input value as a float
+                    const rawValue = parseFloat(inputElement.value);
+
+                    // Round down the value to the nearest whole number
+                    const roundedValue = Math.floor(rawValue);
+
+                    // Check if the rounded value is within the valid range
+                    if (isNaN(roundedValue) || roundedValue < minValue || roundedValue > maxValue) {
+                        // Display an error message
+                        errorElement.style.display = 'block';
+                        inputElement.value = ''; // Clear the input field
+                    } else {
+                        // Hide the error message
+                        errorElement.style.display = 'none';
+                        // Set the input value to the rounded value
+                        inputElement.value = roundedValue;
+
+                        // Callback function (if provided)
+                        if (typeof callback === 'function') {
+                            callback();
+                        }
+                    }
+                }
+                function validateInputValue(inputId, errorId, min, max, callback) {
+                    validateFactor(inputId, errorId, min, max, callback);
+                }
+                function validateMaxDensity() {
+                    const maxDensityInput = document.getElementById('maxDensity');
+                    const errorSpan = document.getElementById('maxDensityError');
+                    const value = parseFloat(maxDensityInput.value);
+
+                    if (isNaN(value) || value < 0.01 || value > 4.7) {
+                        // If validation fails, show error and clear related fields
+                        errorSpan.style.display = 'block';
+                        maxDensityInput.value = '';
+                        document.getElementById('appropriateDensity').value = ''; // Clear the 'Appropriate Density' box
+                        clearHoldingCapacity(); // Clear the 'Holding Capacity' box
+                    } else {
+                        // If validation succeeds, hide error and format the value to four decimal places
+                        errorSpan.style.display = 'none';
+                        maxDensityInput.value = value.toFixed(4); // Format to 4 decimal places
+                        calculateAppropriateDensity(); // Recalculate 'Appropriate Density'
+                    }
+                }
+                function calculateAppropriateDensity() {
+                    const physicalFactor = parseFloat(document.getElementById('physicalFactor').value).toFixed(3) || 0;
+                    const safetyFactor = parseFloat(document.getElementById('safetyFactor').value).toFixed(3) || 0;
+                    const maxDensity = parseFloat(document.getElementById('maxDensity').value).toFixed(3) || 0;
+                    const appropriateDensity = Math.min(physicalFactor, safetyFactor) * maxDensity;
+                    document.getElementById('appropriateDensity').value = appropriateDensity.toFixed(3);
+
+                    if (document.getElementById('standing').checked) {
+                        calculateHoldingCapacityForStanding();
+                    } else if (document.getElementById('sitting').checked) {
+                        calculateHoldingCapacityForSitting();
+                    }
+                }
+
+                function calculateHoldingCapacityForStanding() {
+                    const viewingArea = (parseFloat(document.getElementById('viewingArea').value)).toFixed(3) || 0;
+                    const appropriateDensity = (parseFloat(document.getElementById('appropriateDensity').value)).toFixed(3) || 0;
+                    const holdingCapacity = (Math.floor(viewingArea * appropriateDensity).toFixed(3));
+                    finalHoldingCapacity = holdingCapacity;
+                    document.getElementById('holdingCapacity').value = holdingCapacity;
+                    checkHoldingCapacity();
+                }
+
+                function calculateHoldingCapacityForSitting() {
+                    const numSeats = parseFloat(document.getElementById('numSeats').value) || 0;
+                    const physicalFactor = parseFloat(document.getElementById('physicalFactor').value) || 0;
+                    const safetyFactor = parseFloat(document.getElementById('safetyFactor').value) || 0;
+                    const holdingCapacity = Math.floor(numSeats * Math.min(physicalFactor, safetyFactor));
+                    document.getElementById('holdingCapacity').value = holdingCapacity;
+                    checkHoldingCapacity();
+                }
+
+                function calculateHoldingCapacity() {
+                    if (document.getElementById('standing').checked) {
+                        calculateHoldingCapacityForStanding();
+                    } else if (document.getElementById('sitting').checked) {
+                        calculateHoldingCapacityForSitting();
+                    }
+                }
+
+                function checkHoldingCapacity() {
+                    const holdingCapacityValue = document.getElementById('holdingCapacity').value;
+                    // Enable the 'Next' button if holding capacity is valid
+                    document.getElementById('to_page2').disabled = !(holdingCapacityValue > 0);
+                }
+
+                function clearHoldingCapacity() {
+                    // Empty the holding capacity box if any validation fails
+                    document.getElementById('holdingCapacity').value = '';
+                }
+
+                document.getElementById('physicalFactor').oninput = calculateAppropriateDensity;
+                document.getElementById('safetyFactor').oninput = calculateAppropriateDensity;
+                document.getElementById('maxDensity').onchange = validateMaxDensity;
+                document.getElementById('viewingArea').oninput = calculateHoldingCapacityForStanding;
+                document.getElementById('numSeats').onchange = calculateHoldingCapacityForSitting;
+                document.getElementById('numTurnstile').onchange = function () {
+                    validateAndRoundInputValue('numTurnstile', 'numTurnstileError', 1, Infinity, 0, calculateEntryCapacityTurnstile);
+                };
+                function checkFields() {
+                    const physicalFactor = document.getElementById('physicalFactor').value;
+                    const safetyFactor = document.getElementById('safetyFactor').value;
+                    const accommodationTypeSelected = document.querySelector('input[name='accommodationType']:checked');
+                    // Check if all fields are filled and valid
+                    const allFieldsFilled = physicalFactor && safetyFactor && accommodationTypeSelected;
+                    const validPhysicalFactor = physicalFactor >= 0 && physicalFactor <= 1;
+                    const validSafetyFactor = safetyFactor >= 0 && safetyFactor <= 1;
+                    // Enable the Next button if conditions are met
+                    document.getElementById('to_page2').disabled = !(allFieldsFilled && validPhysicalFactor && validSafetyFactor);
+                }
+
+                /*       function checkAndChangeScreen(currentPageId) {
+                           const currentPage = document.getElementById(currentPageId);
+                           const nextPageId = getNextPageId(currentPageId);
+                           const nextPage = document.getElementById(nextPageId);
+                           console.log('finalHoldingCapacity =' + holdingCapacity);
+
+                           if (currentPageId === 'page1') {
+                               // Save the holding capacity when moving from page1 to page2
+                               console.log('before page 1 finalHoldingCapacity =' + holdingCapacity);
+                               finalHoldingCapacity = parseFloat(document.getElementById('holdingCapacity').value) || 0;
+                               console.log('after assignment finalHoldingCapacity =' + holdingCapacity);
+                               //alert('Holding Capacity: ' + finalHoldingCapacity);
+                               updateHoldingCapacityOnPage2();
+                           }
+
+                           if (currentPageId === 'page2') {
+                               // Show an alert with the entryCapacity value when moving from page2
+                               alert('Entry Capacity: ' + entryCapacity);
+
+                           }
+
+                           if (currentPageId === 'page3') {
+                               // Save the exit capacity when moving from page3
+                               finalExitCapacity = parseFloat(document.getElementById('exitCapacity').value) || 0;
+                           }
+
+                           if (currentPageId === 'page4') {
+                               finalEmergencyExitCapacity = parseFloat(document.getElementById('emergencyExitCapacity').value) || 0;
+                               updateCapacityTable();
+                               document.page5.style.display = 'block';
+                           }
+
+                           // Hide current page and show next page
+                           currentPage.style.display = 'none';
+                           nextPage.style.display = 'block';
+                       }*/
+
+                function checkAndChangeScreen(currentPageId) {
+                    console.log('Before - finalHoldingCapacity:', finalHoldingCapacity);
+
+                    const currentPage = document.getElementById(currentPageId);
+                    const nextPageId = getNextPageId(currentPageId);
+                    const nextPage = document.getElementById(nextPageId);
+                    if (currentPageId === 'page0') {
+                        document.getElementById('page0').style.display = 'none !important';
+
+
+                    }
+                    // Handling logic for different pages
+                    if (currentPageId === 'page1') {
+                        // Ensure finalHoldingCapacity is being set correctly
+                        finalHoldingCapacity = parseFloat(document.getElementById('holdingCapacity').value) || 0;
+                        globalHoldingCapacity = finalHoldingCapacity;
+                        console.log('Setting finalHoldingCapacity on Page 1:', finalHoldingCapacity);
+                        document.getElementById('holdingCapacityValue').textContent = globalHoldingCapacity;
+                    }
+
+                    if (currentPageId === 'page2') {
+                        // Show an alert with the entryCapacity value when moving from page2
+                        globalEntryCapacity = parseFloat(document.getElementById('entryCapacity').value) || 0;
+                        document.getElementById('entryCapacityValue').textContent = globalEntryCapacity;
+                    }
+
+                    if (currentPageId === 'page3') {
+                        // Save the exit capacity when moving from page3
+                        globalExitCapacity = parseFloat(document.getElementById('exitCapacity').value) || 0;
+                        document.getElementById('exitCapacityValue').textContent = globalExitCapacity;
+                    }
+
+                    if (currentPageId === 'page4') {
+                        globalEmergencyExitCapacity = parseFloat(document.getElementById('emergencyExitCapacity').value) || 0;
+                        document.getElementById('emergencyExitCapacityValue').textContent = globalEmergencyExitCapacity;
+
+                        // Array of all global capacity values
+                        const capacities = [
+                            globalHoldingCapacity,
+                            globalEntryCapacity,
+                            globalExitCapacity,
+                            globalEmergencyExitCapacity
+                        ];
+
+                        // Calculate the minimum capacity
+                        // The filter method ensures that only non-zero values are considered
+                        const minCapacity = capacities.filter(c => c > 0).length > 0 ? Math.min(...capacities.filter(c => c > 0)) : 0;
+
+                        // Update the minimum capacity on the page
+                        document.getElementById('minCapacityValue').textContent = minCapacity.toFixed(0); // Round to the nearest whole number
+
+                        prepareAndDisplayPage5();
+                    }
+                    // Add additional conditions for other pages as needed
+
+                    // Transition between pages
+                    if (currentPage) currentPage.style.display = 'none';
+                    if (nextPage) nextPage.style.display = 'block';
+                }
+
+                function getNextPageId(currentPageId) {
+                    // Assuming page IDs follow a consistent naming convention like 'page1', 'page2', etc.
+                    const pageNum = parseInt(currentPageId.replace('page', ''));
+                    return 'page' + (pageNum + 1);
+                }
+
+                function getNextPageId(currentPageId) {
+                    // Assuming page IDs follow a consistent naming convention like 'page1', 'page2', etc.
+                    const pageNum = parseInt(currentPageId.replace('page', ''));
+                    return 'page' + (pageNum + 1);
+                }
+
+                function updateNextButtonState() {
+                    const entryCapacityValue = parseFloat(document.getElementById('entryCapacity').value) || 0;
+                    document.getElementById('to_page3').disabled = entryCapacityValue <= 0;
+                }
+
+                function calculateEntryCapacityTurnstile() {
+                    const numTurnstiles = Number(document.getElementById('numTurnstile').value) || 0;
+                    const turnstileFlowRate = Number(document.getElementById('turnstileFlowRate').value) || 0;
+                    document.getElementById('entryCapacity').value = numTurnstiles * turnstileFlowRate;
+                    updateNextButtonState();
+
+                }
+
+                function calculateEntryCapacity() {
+                    console.log('f2 =' + f2);
+                    const turnstileUsed = document.getElementById('yesTurnstile').checked;
+                    if (turnstileUsed) {
+                        calculateEntryCapacityTurnstile();
+                    } else {
+                        calculateEntryCapacityRegular();
+                    }
+                }
+                function validateEgressMinutes() {
+                    const egressMinutes = parseFloat(document.getElementById('egressMinutes').value);
+                    const errorSpan = document.getElementById('egressMinutesError');
+
+                    if (egressMinutes.value !== '' && (isNaN(egressMinutes) || egressMinutes <= 0 || egressMinutes > 8)) {
+                        errorSpan.style.display = 'block';
+                        errorSpan.textContent = 'Minutes must be positive, and less than 8';
+                        return false; // Invalid
+                    } else {
+                        errorSpan.style.display = 'none';
+                        return true; // Valid
+                    }
+                }
+                document.getElementById('egressMinutes').oninput = validateEgressMinutes;
+
+                function validateCustomExitFlowRate() {
+                    const customExitFlowRate = parseFloat(document.getElementById('customExitFlowRate').value);
+                    const errorSpan = document.getElementById('customExitFlowRateError');
+
+                    if (isNaN(customExitFlowRate) || customExitFlowRate < 1 || customExitFlowRate > 109) {
+                        errorSpan.style.display = 'block';
+                        errorSpan.textContent = 'Flow rate must be between 1 and 109';
+                        //  customFlowRateInput.value = '';
+                        return false; // Invalid
+                    } else {
+                        errorSpan.style.display = 'none';
+                        return true; // Valid
+                    }
+                }
+
+
+                document.getElementById('customExitFlowRate').oninput = validateCustomExitFlowRate;
+
+                function calculateExitCapacity() {
+                    var exitWidth = parseFloat(document.getElementById('exitWidth').value) || 0;
+                    var egressMinutes = parseFloat(document.getElementById('egressMinutes').value) || 0;
+                    var flowRate = getSelectedFlowRate();
+                    var exitCapacity = exitWidth * flowRate * egressMinutes;
+
+                    document.getElementById('exitCapacity').value = exitCapacity.toFixed(2);
+
+                    // Enable the 'Next' button if exit capacity is a positive number
+                    document.getElementById('to_page4').disabled = exitCapacity <= 0;
+                }
+
+                function getSelectedFlowRate() {
+                    var flowRateRadios = document.getElementsByName('exitFlowRate');
+                    for (var i = 0; i < flowRateRadios.length; i++) {
+                        if (flowRateRadios[i].checked) {
+                            if (flowRateRadios[i].value === 'custom') {
+                                return parseFloat(document.getElementById('customExitFlowRate').value) || 0;
+                            }
+                            return parseFloat(flowRateRadios[i].value);
+                        }
+                    }
+                    return 0; // Default value if none is selected
+                }
+
+                function calculateEmergencyExitCapacity() {
+                    const emergencyExitWidth = Number(document.getElementById('emergencyExitWidth').value) || 0;
+                    const emergencyExitFlowRate = Number(document.querySelector('input[name='emergencyExitFlowRate']:checked').value) || Number(document.getElementById('customEmergencyExitFlowRate').value) || 0;
+                    const emergencyEgressMinutes = Number(document.getElementById('emergencyEgressMinutes').value) || 0;
+                    result = emergencyExitWidth * emergencyExitFlowRate * emergencyEgressMinutes;
+                    document.getElementById('emergencyExitCapacity').value = result;
+
+                    // Check and update the button state
+                    if (result > 0) {
+                        // Enable the 'Next' button
+                        document.getElementById('to_page5').disabled = false;
+                    } else {
+                        // Disable the 'Next' button
+                        document.getElementById('to_page5').disabled = true;
+                    }
+                }
+
+                document.getElementById('emergencyExitFlowRateCustom').onchange = function () {
+                    document.getElementById('customEmergencyExitFlowRateInput').style.display = this.checked ? 'block' : 'none';
+                };
+
+                function checkHoldingCapacity() {
+
+                    // Get the value of Holding Capacity
+                    const holdingCapacityValue = document.getElementById('holdingCapacity').value;
+                    // Check if Holding Capacity is a number and greater than 0
+                    const isHoldingCapacityValid = !isNaN(holdingCapacityValue) && parseFloat(holdingCapacityValue) > 0;
+                    // Enable the 'Next' button if Holding Capacity is valid (greater than zero)
+                    document.getElementById('to_page2').disabled = !isHoldingCapacityValid;
+                }
+
+
+                function displayFields(divId) {
+                    const fieldIds = ['standingInputs', 'sittingInputs', 'turnstileInputs', 'regularInputs'];
+                    for (let i = 0; i < fieldIds.length; i++) {
+                        let field = document.getElementById(fieldIds[i]);
+                        field.style.display = fieldIds[i] === divId ? 'block' : 'none';
+                    }
+
+                    // Show factor inputs when either radio button is selected
+                    const factorInputsDiv = document.getElementById('factorInputs');
+                    if (divId === 'standingInputs' || divId === 'sittingInputs') {
+                        factorInputsDiv.style.display = 'block';
+                    } else {
+                        factorInputsDiv.style.display = 'none';
+                    }
+
+                    // Check and reset holding capacity
+                    resetHoldingCapacity();
+
+                    // Check holding capacity to enable/disable the Next button
+                    checkHoldingCapacity();
+                }
+
+                function resetHoldingCapacity() {
+                    const holdingCapacityInput = document.getElementById('holdingCapacity');
+                    if (parseFloat(holdingCapacityInput.value) > 0) {
+                        holdingCapacityInput.value = 0;
+                    }
+                    calculateHoldingCapacity();
+                }
+
+
+                function changeScreen(id) {
+                    // Get array of possible screens
+                    const screenIds = ['page1', 'page2', 'page3', 'page4', 'page5'];
+                    // Loop through each screen
+                    for (let i = 0; i < screenIds.length; i++) {
+                        let screen = document.getElementById(screenIds[i]);
+                        if (screenIds[i] === id) {
+                            screen.style.display = 'block';
+                        } else {
+                            screen.style.display = 'none';
+                        }
+                    }
+                }
+
+                document.getElementById('numSeats').onchange = function () {
+                    validateAndRoundInputValue('numSeats', 'numSeatsError', 1, Infinity, calculateHoldingCapacityForSitting);
+                };
+
+
+                function handleTurnstileSelection(selection) {
+                    console.log('finalHoldingCapacity =' + holdingCapacity);
+
+                    const turnstileInputs = document.getElementById('turnstileInputs');
+                    const regularInputs = document.getElementById('regularInputs');
+                    turnstileInputs.style.display = selection === 'yes' ? 'block' : 'none';
+                    regularInputs.style.display = selection === 'no' ? 'block' : 'none';
+
+                    if (selection === 'yes') {
+                        validateTurnstileInputs(); // Validate turnstile inputs if 'Yes' is selected
+                    } else {
+                        document.getElementById('entryCapacity').value = ''; // Reset entry capacity for 'No' selection
+                        updateNextButtonState(); // Update the state of the 'Next' button
+                    }
+                }
+                function areTurnstileInputsValid() {
+                    const numTurnstiles = document.getElementById('numTurnstile').value;
+                    const turnstileFlowRate = document.getElementById('turnstileFlowRate').value;
+                    return numTurnstiles && turnstileFlowRate && !isNaN(numTurnstiles) && !isNaN(turnstileFlowRate);
+                }
+
+                function areRegularInputsValid() {
+                    const entryWidth = document.getElementById('entryWidth').value;
+                    const entryFlowRate = document.getElementById('entryFlowRate').value;
+                    return entryWidth && entryFlowRate && !isNaN(entryWidth) && !isNaN(entryFlowRate);
+                }
+
+                function validateAndCalculateTurnstileCapacity() {
+                    // Assuming you have a function to validate turnstile inputs
+                    const isValid = validateTurnstileInputs(); // This should return true/false based on validity
+                    if (isValid) {
+                        calculateEntryCapacityTurnstile();
+                    } else {
+                        resetEntryCapacity();
+                    }
+                }
+
+                function validateAndCalculateRegularCapacity() {
+                    // Assuming you have a function to validate regular inputs
+                    const isValid = validateRegularInputs(); // This should return true/false based on validity
+                    if (isValid) {
+                        calculateEntryCapacity();
+                    } else {
+                        resetEntryCapacity();
+                    }
+                }
+
+                function calculateEntryCapacityTurnstile() {
+                    console.log('finalHoldingCapacity =' + holdingCapacity);
+
+                    const numTurnstiles = parseFloat(document.getElementById('numTurnstile').value) || 0;
+                    const turnstileFlowRate = parseFloat(document.getElementById('turnstileFlowRate').value) || 0;
+                    entryCapacity = numTurnstiles * turnstileFlowRate * 60; // Assuming the rate is per minute
+                    document.getElementById('entryCapacity').value = entryCapacity;
+                    updateNextButtonState();
+                }
+
+                function calculateEntryCapacityRegular() {
+                    console.log('finalHoldingCapacity =' + holdingCapacity);
+
+                    const entryWidth = parseFloat(document.getElementById('entryWidth').value) || 0;
+                    const entryFlowRate = parseFloat(document.getElementById('entryFlowRate').value) || 0;
+                    entryCapacity = entryWidth * entryFlowRate * 60; // Assuming the rate is per minute
+                    document.getElementById('entryCapacity').value = entryCapacity;
+                    updateNextButtonState();
+
+                }
+
+                function updateNextButtonState() {
+                    const entryCapacityValue = parseFloat(document.getElementById('entryCapacity').value) || 0;
+                    document.getElementById('to_page3').disabled = entryCapacityValue <= 0;
+                }
+                function resetEntryCapacity() {
+                    entryCapacity = 0;
+                    document.getElementById('entryCapacity').value = '';
+                    updateNextButtonState();
+
+                }
+
+                function validateRegularInputs() {
+                    const entryWidth = parseFloat(document.getElementById('entryWidth').value) || 0;
+                    const entryFlowRate = parseFloat(document.getElementById('entryFlowRate').value) || 0;
+                    let isValid = true;
+
+                    // Validate entry width
+                    if (entryWidth <= 0) {
+                        document.getElementById('entryWidthError').style.display = 'block';
+                        isValid = false;
+                    } else {
+                        document.getElementById('entryWidthError').style.display = 'none';
+                    }
+
+                    // Validate entry flow rate
+                    if (entryFlowRate <= 0 || entryFlowRate > 109) {
+                        document.getElementById('entryFlowRateError').style.display = 'block';
+                        isValid = false;
+                    } else {
+                        document.getElementById('entryFlowRateError').style.display = 'none';
+                    }
+
+                    if (isValid) {
+                        // Update entryCapacity if valid
+                        calculateEntryCapacityRegular();
+                    } else {
+                        resetEntryCapacity();
+                    }
+                }
+
+                function updateTableWithColorSpectrum() {
+                    const maxValue = 100; // Adjust according to your maximum value
+                    const minValue = 0;   // Adjust according to your minimum value
+
+                    const capacities = [
+                        { id: 'entryCapacityValue', value: parseFloat(document.getElementById('entryCapacityValue').textContent) },
+                        { id: 'exitCapacityValue', value: parseFloat(document.getElementById('exitCapacityValue').textContent) },
+                        { id: 'emergencyExitCapacityValue', value: parseFloat(document.getElementById('emergencyExitCapacityValue').textContent) },
+                        { id: 'minCapacityValue', value: parseFloat(document.getElementById('minCapacityValue').textContent) },
+                        // Add more if needed
+                    ];
+
+                    capacities.forEach(capacity => {
+                        const color = getColorForValue(capacity.value, minValue, maxValue);
+                        document.getElementById(capacity.id).style.backgroundColor = color;
+                    });
+                }
+
+                function validateTurnstileInputs() {
+                    const numTurnstile = parseFloat(document.getElementById('numTurnstile').value) || 0;
+                    const turnstileFlowRate = parseFloat(document.getElementById('turnstileFlowRate').value) || 0;
+                    let isValid = true;
+
+                    // Validate number of turnstiles
+                    if (numTurnstile <= 0) {
+                        document.getElementById('numTurnstileError').style.display = 'block';
+                        isValid = false;
+                    } else {
+                        document.getElementById('numTurnstileError').style.display = 'none';
+                    }
+
+                    // Validate turnstile flow rate
+                    if (turnstileFlowRate < 1 || turnstileFlowRate > 11) {
+                        document.getElementById('turnstileFlowRateError').style.display = 'block';
+                        isValid = false;
+                    } else {
+                        document.getElementById('turnstileFlowRateError').style.display = 'none';
+                    }
+
+                    // Enable the 'Next' button if all inputs are valid
+                    document.getElementById('to_page3').disabled = !isValid;
+
+                    if (isValid) {
+                        calculateEntryCapacityTurnstile();
+                    } else {
+                        resetEntryCapacity();
+                    }
+                }
+
+                function validateExitWidth() {
+                    const exitWidth = parseFloat(document.getElementById('exitWidth').value);
+                    const errorSpan = document.getElementById('exitWidthError');
+
+                    if (isNaN(exitWidth) || exitWidth <= 0) {
+                        errorSpan.style.display = 'block';
+                        errorSpan.textContent = 'Width must be greater than 0';
+                        return false; // Invalid
+                    } else {
+                        errorSpan.style.display = 'none';
+                        return true; // Valid
+                    }
+                }
+
+                // Attach this function to the 'exitWidth' input's oninput event
+                document.getElementById('exitWidth').oninput = validateExitWidth;
+
+                const flowRateRadioButtons = document.getElementsByName('flowRate');
+                for (const radioButton of flowRateRadioButtons) {
+                    radioButton.addEventListener('change', validateExitCapacityInputs);
+                }
+
+                function onCustomExitFlowRateChange() {
+                    if (validateCustomExitFlowRate()) {
+                        calculateExitCapacity();
+                    }
+                }
+
+                function onEgressMinutesChange() {
+                    if (validateEgressMinutes()) {
+                        calculateExitCapacity();
+                    }
+                }
+
+                function onExitFlowRateChange(radio) {
+                    toggleCustomFlowRateInput(radio.value === 'custom');
+                }
+
+
+
+
+                function toggleCustomFlowRateInput(isCustomSelected) {
+                    var customInputDiv = document.getElementById('customExitFlowRateInput');
+                    customInputDiv.style.display = isCustomSelected ? 'block' : 'none';
+                    if (!isCustomSelected) {
+                        document.getElementById('customExitFlowRate').value = '';
+                    }
+                    calculateExitCapacity();
+                }
+
+                // Implementing the validations for Form 4 (Page 4 - Emergency Exit Calculation)
+
+                // Replicating the validateExitWidth function for emergencyExitWidth
+                function validateEmergencyExitWidth() {
+                    const exitWidth = document.getElementById('emergencyExitWidth').value;
+                    const errorDisplay = document.getElementById('emergencyExitWidthError');
+                    let valid = exitWidth && exitWidth > 0;
+
+                    errorDisplay.style.display = valid ? 'none' : 'block';
+                    //toggleNextButtonForForm4();
+                    if (valid) calculateEmergencyExitCapacity();
+                }
+
+                document.getElementById('emergencyExitWidth').addEventListener('change', calculateEmergencyExitCapacity);
+                document.querySelector('input[name='emergencyExitFlowRate']').addEventListener('change', calculateEmergencyExitCapacity);
+                document.getElementById('emergencyEgressMinutes').addEventListener('change', calculateEmergencyExitCapacity);
+                document.getElementById('customEmergencyExitFlowRate').addEventListener('change', calculateEmergencyExitCapacity);
+
+
+                // Implementing oninput event handler for emergencyExitWidth input
+                document.getElementById('emergencyExitWidth').oninput = function () {
+                    validateEmergencyExitWidth();
+                    calculateEmergencyExitCapacity();
+                };
+
+                // Replicating onExitFlowRateChange function for emergencyExitFlowRateChange
+                function onEmergencyExitFlowRateChange(radio) {
+                    const customFlowInput = document.getElementById('customEmergencyExitFlowRateInput');
+                    customFlowInput.style.display = radio.value === 'custom' ? 'block' : 'none';
+
+                    calculateEmergencyExitCapacity();
+                }
+                function validateEmergencyCustomFlowRate() {
+                    const customFlowRateInput = document.getElementById('emergencyCustomFlowRate');
+                    const customFlowRateError = document.getElementById('emergencyCustomFlowRateError');
+                    try {
+                        const flowRate = parseFloat(customFlowRateInput.value);
+
+                        if (flowRate > 0) {
+                            // The flow rate is valid
+                            customFlowRateError.style.display = 'none';
+                        } else {
+                            // The flow rate is not valid
+                            customFlowRateError.style.display = 'block';
+                        }
+                    }
+                    catch (error) {
+
+                    }
+                }
+
+
+                // Replicating calculateExitCapacity for calculateEmergencyExitCapacity
+                function calculateEmergencyExitCapacity() {
+                    const emergencyExitWidth = Number(document.getElementById('emergencyExitWidth').value) || 0;
+                    const emergencyExitFlowRate = Number(document.querySelector('input[name='emergencyExitFlowRate']:checked').value) || Number(document.getElementById('customEmergencyExitFlowRate').value) || 0;
+                    const emergencyEgressMinutesInput = document.getElementById('emergencyEgressMinutes');
+                    const emergencyEgressMinutes = Number(emergencyEgressMinutesInput.value) || 0;
+                    const validationMessageSpan = document.getElementById('emergencyEgressMinutesValidation');
+
+                    // Validate the input value
+                    if (emergencyEgressMinutes <= 8) {
+                        // Valid input
+                        result = emergencyExitWidth * emergencyExitFlowRate * emergencyEgressMinutes;
+                        document.getElementById('emergencyExitCapacity').value = result;
+                        validationMessageSpan.textContent = ''; // Clear validation message
+                        // Check and update the button state
+                        if (result > 0) {
+                            // Enable the 'Next' button
+                            document.getElementById('to_page5').disabled = false;
+                        } else {
+                            // Disable the 'Next' button
+                            document.getElementById('to_page5').disabled = true;
+                        }
+                    } else {
+                        // Invalid input
+                        document.getElementById('emergencyExitCapacity').value = ''; // Clear the result
+                        validationMessageSpan.textContent = 'Minutes must be 8 or less'; // Display validation message
+                        // Disable the 'Next' button
+                        document.getElementById('to_page5').disabled = true;
+                    }
+                }
+
+
+                document.getElementById('emergencyExitFlowRateCustom').onchange = function () {
+                    toggleCustomEmergencyFlowRateInput(this.checked);
+                };
+                document.getElementById('customEmergencyExitFlowRate').oninput = function () {
+                    validateCustomEmergencyExitFlowRate();
+                };
+                document.getElementById('emergencyEgressMinutes').oninput = function () {
+                    calculateEmergencyExitCapacity();
+                };
+                function getEmergencyExitSelectedFlowRate() {
+                    const radios = document.getElementsByName('emergencyExitFlowRate');
+                    for (let i = 0; i < radios.length; i++) {
+                        if (radios[i].checked && radios[i].value !== 'custom') {
+                            return parseFloat(radios[i].value);
+                        }
+                    }
+                    // If 'Custom' is selected, use the custom flow rate.
+                    const customFlowRate = parseFloat(document.getElementById('customEmergencyExitFlowRate').value);
+                    return !isNaN(customFlowRate) ? customFlowRate : 0;
+                }
+
+                // Replicating the onCustomExitFlowRateChange and validate methods for the emergency exit
+                function onCustomEmergencyExitFlowRateChange() {
+                    const customRate = parseFloat(document.getElementById('customEmergencyExitFlowRate').value);
+                    const customRateError = document.getElementById('customEmergencyExitFlowRateError');
+
+                    if (isNaN(customRate) || customRate < 1 || customRate > 109) {
+                        customRateError.style.display = 'block';
+                    } else {
+                        customRateError.style.display = 'none';
+                        calculateEmergencyExitCapacity();
+                    }
+                }
+
+                // Binding the emergency exit flow rate change handler to the radio buttons
+                const emergencyFlowRateRadios = document.getElementsByName('emergencyExitFlowRate');
+                for (let i = 0; i < emergencyFlowRateRadios.length; i++) {
+                    emergencyFlowRateRadios[i].addEventListener('change', function () {
+                        onEmergencyExitFlowRateChange(this);
+                    });
+                }
+                function toggleCustomEmergencyFlowRateInput(isCustomSelected) {
+                    const customFlowRateInputDiv = document.getElementById('customEmergencyExitFlowRateInput');
+                    customFlowRateInputDiv.style.display = isCustomSelected ? 'block' : 'none';
+                    if (!isCustomSelected) {
+                        document.getElementById('customEmergencyExitFlowRate').value = '';  // Clear the input value when custom is not selected.
+                    }
+
+                }
+                function showCustomEmergencyExitFlowRateInput() {
+                    const customFlowRateInputDiv = document.getElementById('customEmergencyExitFlowRateInput');
+                    const emergencyExitFlowRateCustom = document.getElementById('emergencyExitFlowRateCustom').checked;
+
+                    // Show or hide custom flow rate input based on the state of the 'Custom' radio button
+                    customFlowRateInputDiv.style.display = emergencyExitFlowRateCustom ? 'block' : 'none';
+
+                    // Clear the input field if 'Custom' is not selected
+                    if (!emergencyExitFlowRateCustom) {
+                        document.getElementById('customEmergencyExitFlowRate').value = '';
+                    }
+
+                    // Initiate calculation if 'Custom' is selected
+                    calculateEmergencyExitCapacity();
+                }
+
+                document.getElementById('emergencyExitWidth').onchange = calculateEmergencyExitCapacity;
+                document.getElementById('emergencyEgressMinutes').onchange = calculateEmergencyExitCapacity;
+                document.getElementById('emergencyExitFlowRateCustom').onchange = showCustomEmergencyExitFlowRateInput;
+                document.getElementById('customEmergencyExitFlowRate').oninput = validateCustomEmergencyExitFlowRate;
+
+                function validateCustomEmergencyExitFlowRate() {
+                    const customEmergencyExitFlowRate = parseFloat(document.getElementById('customEmergencyExitFlowRate').value);
+                    const customEmergencyFlowRateError = document.getElementById('customEmergencyExitFlowRateError');
+                    let isValid = !isNaN(customEmergencyExitFlowRate) && customEmergencyExitFlowRate > 0;
+
+                    customEmergencyFlowRateError.style.display = isValid ? 'none' : 'block';
+
+                    // Only perform calculation if 'Custom' is selected and input is valid
+                    if (isValid && document.getElementById('emergencyExitFlowRateCustom').checked) {
+                        calculateEmergencyExitCapacity();
+                    }
+                }
+
+                function prepareAndDisplayPage5() {
+                    // Collect and sort values to determine min and max
+                    const values = [
+                        parseFloat(document.getElementById('entryCapacityValue').textContent),
+                        parseFloat(document.getElementById('exitCapacityValue').textContent),
+                        parseFloat(document.getElementById('emergencyExitCapacityValue').textContent),
+                        parseFloat(document.getElementById('minCapacityValue').textContent),
+                        parseFloat(document.getElementById('holdingCapacityValue').textContent)
+                    ].filter(value => !isNaN(value));
+
+                    // Determine min and max values
+                    const minValue = Math.floor(Math.min(...values)); // Round down to nearest whole number
+
+                    // Function to get color based on value
+                    function getColorForValue(value) {
+                        const alpha = 0.7; // Transparency level
+                        if (value === minValue) {
+                            // Highlight the smallest row in transparent green
+                            return `rgba(0, 255, 0, ${alpha})`;
+                        } else {
+                            // Color all other rows in transparent red
+                            return `rgba(255, 0, 0, ${alpha})`;
+                        }
+                    }
+
+                    // Update each cell with the appropriate color
+                    document.getElementById('entryCapacityValue').style.backgroundColor = getColorForValue(parseFloat(document.getElementById('entryCapacityValue').textContent));
+                    document.getElementById('exitCapacityValue').style.backgroundColor = getColorForValue(parseFloat(document.getElementById('exitCapacityValue').textContent));
+                    document.getElementById('emergencyExitCapacityValue').style.backgroundColor = getColorForValue(parseFloat(document.getElementById('emergencyExitCapacityValue').textContent));
+                    document.getElementById('minCapacityValue').style.backgroundColor = getColorForValue(parseFloat(document.getElementById('minCapacityValue').textContent));
+                    document.getElementById('holdingCapacityValue').style.backgroundColor = getColorForValue(parseFloat(document.getElementById('holdingCapacityValue').textContent));
+                }
+                // Binding the custom emergency exit flow rate change handler to the custom flow rate input
+                document.getElementById('customEmergencyExitFlowRate').onchange = onCustomEmergencyExitFlowRateChange;
+
+                // Replicating validateEgressMinutes for emergency egress
+                document.getElementById('emergencyEgressMinutes').oninput = function () {
+                    // Repeat egress minutes validation for emergency egress minutes
+                    validateEgressMinutes();
+                    calculateEmergencyExitCapacity();
+                };
+                document.getElementById('emergencyExitFlowRateCustom').addEventListener('change', validateEmergencyCustomFlowRate);
+                document.getElementById('customEmergencyExitFlowRate').addEventListener('input', validateEmergencyCustomFlowRate);
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Other initialization code...
+                    updateNextButtonState();
+                    const customSelected = document.getElementById('emergencyExitFlowRateCustom').checked;
+                    toggleCustomEmergencyFlowRateInput(customSelected);
+                    // Event listener for custom flow rate input
+                    document.getElementById('customExitFlowRate').onchange = function () {
+                        if (validateCustomExitFlowRate()) {
+                            calculateExitCapacity();
+                        }
+                    };
+
+                    // Event listeners for flow rate radio buttons
+                    var flowRateRadios = document.getElementsByName('exitFlowRate');
+                    for (var i = 0; i < flowRateRadios.length; i++) {
+                        flowRateRadios[i].addEventListener('change', function () {
+                            toggleCustomFlowRateInput(this.value === 'custom');
+                        });
+                    }
+                });
+              </script>
+            </div>
+          </div>
+          <div class="theform-container5">
+            <div class="theform-container6">
+              <div class="theform-container7"></div>
+            </div>
+          </div>
+          <div class="theform-container8"></div>
+        </div>
+      </div>
+    </div>
+    <script
+      data-section-id="navbar"
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script>
+  </body>
+</html>

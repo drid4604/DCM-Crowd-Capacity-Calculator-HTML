@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>formPage2 - DCM Crowd Capacity Calculator</title>
+    <meta
+      property="og:title"
+      content="formPage2 - DCM Crowd Capacity Calculator"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+    <style>
+      @keyframes fade-in-left {
+        0% {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <link rel="stylesheet" href="./style.css" />
+    <div>
+      <link href="./form-page2.css" rel="stylesheet" />
+
+      <div class="form-page2-container">
+        <div class="form-page2-header">
+          <button type="button" class="form-page2-button button">
+            Contact Us
+          </button>
+          <img
+            alt="image"
+            src="ee414531-8f0f-4d0e-bd65-da077ffa2469"
+            class="form-page2-image"
+          />
+        </div>
+        <div class="form-page2-banner">
+          <div class="form-page2-container1"></div>
+          <div class="form-page2-container2">
+            <div class="form-page2-btn-group"></div>
+            <h1 class="form-page2-text">Green Guide</h1>
+          </div>
+        </div>
+        <div class="form-page2-container3">
+          <span class="form-page2-text01">
+            <span class="form-page2-text02">
+              The Guide to Safety at Sports Grounds (also known as the Green
+              Guide) is recognised world-wide as best practice for the design
+              and management of event spaces.
+            </span>
+            <br class="form-page2-text03" />
+            <br class="form-page2-text04" />
+            <span class="form-page2-text05">
+              The below fields relating to Worksite/Event/Job are used to
+              aggregate Area Reports for an event space in a dashboard
+              environment.
+            </span>
+            <br class="form-page2-text06" />
+            <br class="form-page2-text07" />
+            <span class="form-page2-text08">
+              Consistency is critical for Area Reports to be aggregated under
+              the correct site/event.
+            </span>
+          </span>
+        </div>
+        <div class="form-page2-container4">
+          <div class="form-page2-container5">
+            <style>
+              * {
+                        font-family: 'Montserrat', sans-serif;
+              }
+              body {
+                 background-color: #f4f4f4;
+              }
+              .form-container {
+              //      margin: 0 auto; /* Centers the form on the page */
+              }
+              .hidden {
+                display: none;
+              }
+              .page {
+                background-color: #fff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+              }
+              h2 {
+                color: #333;
+                font-size: 1.6em;
+              }
+              label {
+                display: block;
+                margin: 10px 0 5px 0;
+                color: #666;
+              }
+              input[type='number'] {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                font-size: 1em;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+              }
+              input[type='radio'] {
+                margin-right: 5px;
+              }
+              button {
+                color: #fff;
+                background-color: #333;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+                font-size: 1em;
+                border-radius: 3px;
+                margin-top: 10px; /* Added margin-top to space out buttons */
+              }
+            </style>
+            <div id="page1">
+              <h2>Holding Capacity Calculation</h2>
+              <label>Accommodation Type:</label>
+              <br />
+              <input
+                type="radio"
+                name="accommodationType"
+                id="standing"
+                value="standing"
+                onclick="displayFields("
+                standinginputs&#x27;)&#x27;=""
+              />
+              Standing
+              <br />
+              <input
+                type="radio"
+                name="accommodationType"
+                id="sitting"
+                value="sitting"
+                onclick="displayFields("
+                sittinginputs&#x27;)&#x27;=""
+              />
+
+              Sitting
+              <br />
+              <br />
+              <label>Physical factor :</label>
+              <input
+                type="number"
+                id="physicalFactor"
+                oninput="calculateAppropriateDensity()"
+              />
+
+              <br />
+              <label>Safety factor :</label>
+              <input
+                type="number"
+                id="safetyFactor"
+                oninput="calculateAppropriateDensity()"
+              />
+              <br />
+              <div id="standingInputs" class="hidden">
+                <label>Viewing Area :</label>
+                <input
+                  type="number"
+                  id="viewingArea"
+                  oninput="calculateHoldingCapacityForStanding()"
+                />
+                m2
+                <br />
+                <label>Maximum Density :</label>
+                <input
+                  type="number"
+                  id="maxDensity"
+                  oninput="calculateAppropriateDensity()"
+                />
+                pp
+                <br />
+                <label>Appropriate Density :</label>
+                <input type="number" id="appropriateDensity" readonly="" />
+                <br />
+              </div>
+              <div id="sittingInputs" class="hidden">
+                <label>Number of usable Seats :</label>
+                <input
+                  type="number"
+                  id="numSeats"
+                  oninput="calculateHoldingCapacityForSitting()"
+                />
+                <br />
+              </div>
+              <label>Holding Capacity :</label>
+              <input type="number" id="holdingCapacity" readonly="" />
+              <br />
+              <button
+                id="to_page2"
+                onclick="changeScreen("
+                page2&#x27;)&#x27;=""
+              >
+                Next
+              </button>
+            </div>
+
+            <div id="page2" class="hidden">
+              <h2>Entry Capacity Calulation</h2>
+              <label>Are turnstiles used at entrances?</label>
+              <br />
+              <input
+                type="radio"
+                name="turnstileUsed"
+                id="yesTurnstile"
+                value="yes"
+                onclick="displayFields("
+                turnstileinputs&#x27;)&#x27;=""
+              />
+              Yes
+              <input
+                type="radio"
+                name="turnstileUsed"
+                id="noTurnstile"
+                value="no"
+                onclick="displayFields("
+                regularinputs&#x27;)&#x27;=""
+              />
+              No
+              <br />
+              <div id="turnstileInputs" class="hidden">
+                <label>Number of turnstiles :</label>
+                <input
+                  type="number"
+                  id="numTurnstile"
+                  oninput="calculateEntryCapacityTurnstile()"
+                />
+                <br />
+                <label>Turnstile flow rate (pp/min) :</label>
+                <input
+                  type="number"
+                  id="turnstileFlowRate"
+                  oninput="calculateEntryCapacityTurnstile()"
+                />
+                pp/min
+                <br />
+              </div>
+              <div id="regularInputs" class="hidden">
+                <label>Cumulative entry width :</label>
+                <input
+                  type="number"
+                  id="entryWidth"
+                  oninput="calculateEntryCapacity()"
+                />
+                m
+                <br />
+                <label>Flow rate :</label>
+                <input
+                  type="number"
+                  id="entryFlowRate"
+                  oninput="calculateEntryCapacity()"
+                />
+                pp/min
+                <br />
+              </div>
+              <label>Entry Capacity :</label>
+              <input type="number" id="entryCapacity" readonly="" />
+              pp
+              <br />
+              <button
+                id="to_page1"
+                onclick="changeScreen("
+                page1&#x27;)&#x27;=""
+              >
+                Prev
+              </button>
+              <button
+                id="to_page3"
+                onclick="changeScreen("
+                page3&#x27;)&#x27;=""
+              >
+                Next
+              </button>
+            </div>
+
+            <div id="page3" class="hidden">
+              <h2>Exit Capacity Calculation</h2>
+              <label>Cumulative exit width :</label>
+              <input
+                type="number"
+                id="exitWidth"
+                oninput="calculateExitCapacity()"
+              />
+              m
+              <br />
+              <label>Flow rate :</label>
+              <br />
+              <input
+                type="radio"
+                name="exitFlowRate"
+                value="66"
+                oninput="calculateExitCapacity()"
+              />
+              Stairs - 66
+              <br />
+              <input
+                type="radio"
+                name="exitFlowRate"
+                value="82"
+                oninput="calculateExitCapacity()"
+              />
+              Level terrain - 82
+              <br />
+              <input
+                type="radio"
+                id="customExitFlowRateRadioButton"
+                value="0"
+                oninput="calculateExitCapacity()"
+              />
+              Custom
+              <br />
+              <div id="customExitFlowRateInput" class="hidden">
+                <label>Custom Flow rate :</label>
+                <input
+                  type="number"
+                  id="customExitFlowRate"
+                  oninput="calculateExitCapacity()"
+                />
+              </div>
+              <label>Minutes for egress :</label>
+              <input
+                type="number"
+                id="egressMinutes"
+                oninput="calculateExitCapacity()"
+              />
+              <br />
+              <label>Exit Capacity :</label>
+              <input type="number" id="exitCapacity" readonly="" />
+              <br />
+              <button
+                id="to_page2"
+                onclick="changeScreen("
+                page2&#x27;)&#x27;=""
+              >
+                Prev
+              </button>
+              <button
+                id="to_page4"
+                onclick="changeScreen("
+                page4&#x27;)&#x27;=""
+              >
+                Next
+              </button>
+            </div>
+
+            <div id="page4" class="hidden">
+              <h2>Emergency Exit Calculation</h2>
+              <label>Cumulative width of exit passages :</label>
+              <input
+                type="number"
+                id="emergencyExitWidth"
+                oninput="calculateEmergencyExitCapacity()"
+              />
+              m
+              <br />
+              <label>Flow rate :</label>
+              <br />
+              <input
+                type="radio"
+                name="emergencyExitFlowRate"
+                value="66"
+                oninput="calculateEmergencyExitCapacity()"
+              />
+              Stairs - 66
+              <br />
+              <input
+                type="radio"
+                name="emergencyExitFlowRate"
+                value="82"
+                oninput="calculateEmergencyExitCapacity()"
+              />
+              Level terrain - 82
+              <br />
+              <input
+                type="radio"
+                id="customEmergencyExitFlowRateRadioButton"
+                value="0"
+                oninput="calculateEmergencyExitCapacity()"
+              />
+              Custom
+              <br />
+              <div id="customEmergencyExitFlowRateInput" class="hidden">
+                <label>Custom Flow rate :</label>
+                <input
+                  type="number"
+                  id="customEmergencyExitFlowRate"
+                  oninput="calculateEmergencyExitCapacity()"
+                />
+              </div>
+              <label>Minutes for emergency egress :</label>
+              <input
+                type="number"
+                id="emergencyEgressMinutes"
+                oninput="calculateEmergencyExitCapacity()"
+              />
+              <br />
+              <label>Emergency Exit Capacity :</label>
+              <input type="number" id="emergencyExitCapacity" readonly="" />
+              <br />
+              <button
+                id="to_page3"
+                onclick="changeScreen("
+                page3&#x27;)&#x27;=""
+              >
+                Prev
+              </button>
+              <button
+                id="to_page5"
+                onclick="changeScreen("
+                page5&#x27;)&#x27;=""
+              >
+                Next
+              </button>
+            </div>
+
+            <!-- Continue with Page 5 -->
+
+            <bodyy>
+              <script>
+                function calculateAppropriateDensity() {
+                  const physicalFactor =
+                    Number(document.getElementById('physicalFactor').value) || 0;
+                  const safetyFactor =
+                    Number(document.getElementById('safetyFactor').value) || 0;
+                  const maxDensity =
+                    Number(document.getElementById('maxDensity').value) || 0;
+
+                  const appropriateDensity =
+                    Math.min(physicalFactor, safetyFactor) * maxDensity;
+
+                  document.getElementById('appropriateDensity').value =
+                    appropriateDensity;
+                  calculateHoldingCapacityForStanding();
+                }
+
+                function calculateHoldingCapacityForStanding() {
+                  const viewingArea =
+                    Number(document.getElementById('viewingArea').value) || 0;
+                  const appropriateDensity =
+                    Number(document.getElementById('appropriateDensity').value) || 0;
+
+                  document.getElementById('holdingCapacity').value =
+                    viewingArea * appropriateDensity;
+                }
+
+                function calculateHoldingCapacityForSitting() {
+                  const numSeats =
+                    Number(document.getElementById('numSeats').value) || 0;
+                  const physicalFactor =
+                    Number(document.getElementById('physicalFactor').value) || 0;
+                  const safetyFactor =
+                    Number(document.getElementById('safetyFactor').value) || 0;
+
+                  document.getElementById('holdingCapacity').value =
+                    numSeats * Math.min(physicalFactor, safetyFactor);
+                }
+
+                function calculateEntryCapacityTurnstile() {
+                  const numTurnstiles =
+                    Number(document.getElementById('numTurnstile').value) || 0;
+                  const turnstileFlowRate =
+                    Number(document.getElementById('turnstileFlowRate').value) || 0;
+
+                  document.getElementById('entryCapacity').value =
+                    numTurnstiles * turnstileFlowRate;
+                }
+
+                function calculateEntryCapacity() {
+                  const entryWidth =
+                    Number(document.getElementById('entryWidth').value) || 0;
+                  const entryFlowRate =
+                    Number(document.getElementById('entryFlowRate').value) || 0;
+
+                  document.getElementById('entryCapacity').value =
+                    entryWidth * entryFlowRate;
+                }
+
+                function calculateExitCapacity() {
+                  const exitWidth =
+                    Number(document.getElementById('exitWidth').value) || 0;
+                  const exitFlowRate =
+                    Number(
+                      document.querySelector('input[name='exitFlowRate']:checked').value
+                    ) ||
+                    Number(document.getElementById('customExitFlowRate').value) ||
+                    0;
+                  const egressMinutes =
+                    Number(document.getElementById('egressMinutes').value) || 0;
+
+                  document.getElementById('exitCapacity').value =
+                    exitWidth * exitFlowRate * egressMinutes;
+                }
+
+                function calculateEmergencyExitCapacity() {
+                  const emergencyExitWidth =
+                    Number(document.getElementById('emergencyExitWidth').value) || 0;
+                  const emergencyExitFlowRate =
+                    Number(
+                      document.querySelector(
+                        'input[name='emergencyExitFlowRate']:checked'
+                      ).value
+                    ) ||
+                    Number(
+                      document.getElementById('customEmergencyExitFlowRate').value
+                    ) ||
+                    0;
+                  const emergencyEgressMinutes =
+                    Number(document.getElementById('emergencyEgressMinutes').value) ||
+                    0;
+
+                  document.getElementById('emergencyExitCapacity').value =
+                    emergencyExitWidth * emergencyExitFlowRate * emergencyEgressMinutes;
+                }
+
+                document.getElementById('customExitFlowRateRadioButton').onchange =
+                  function () {
+                    document.getElementById('customExitFlowRateInput').style.display =
+                      this.checked ? 'block' : 'none';
+                  };
+
+                document.getElementById(
+                  'customEmergencyExitFlowRateRadioButton'
+                ).onchange = function () {
+                  document.getElementById(
+                    'customEmergencyExitFlowRateInput'
+                  ).style.display = this.checked ? 'block' : 'none';
+                };
+
+                function changeScreen(page) {
+                  let pages = ['page1', 'page2', 'page3', 'page4'];
+                  for (let i = 0; i < pages.length; i++) {
+                    document.getElementById(pages[i]).style.display = 'none';
+                  }
+                  document.getElementById(page).style.display = 'block';
+                }
+
+                function displayFields(divId) {
+                  let elements = document.getElementsByClassName('hidden');
+                  for (i = 0; i < elements.length; i++) {
+                    elements[i].style.display = 'none';
+                  }
+                  document.getElementById(divId).style.display = 'block';
+                }
+
+                function displayFields(id) {
+                  // Get array of elements to be hidden
+                  const fieldIds = [
+                    'standingInputs',
+                    'sittingInputs',
+                    'turnstileInputs',
+                    'regularInputs',
+                  ];
+                  // Loop through each element
+                  for (let i = 0; i < fieldIds.length; i++) {
+                    let field = document.getElementById(fieldIds[i]);
+                    if (fieldIds[i] === id) {
+                      field.style.display = 'block';
+                    } else {
+                      field.style.display = 'none';
+                    }
+                  }
+                }
+
+                function changeScreen(id) {
+                  // Get array of possible screens
+                  const screenIds = ['page1', 'page2', 'page3', 'page4'];
+                  // Loop through each screen
+                  for (let i = 0; i < screenIds.length; i++) {
+                    let screen = document.getElementById(screenIds[i]);
+                    if (screenIds[i] === id) {
+                      screen.style.display = 'block';
+                    } else {
+                      screen.style.display = 'none';
+                    }
+                  }
+                }
+              </script>
+            </bodyy>
+          </div>
+        </div>
+        <div class="form-page2-container6"></div>
+        <div class="form-page2-banner1">
+          <span class="form-page2-text09">
+            <span>Disclaimer</span>
+            <br />
+            <span>
+              This tool provides basic calculations for crowd safety based on
+              guidelines discussed in the Green Guide.
+            </span>
+            <br />
+            <br />
+            <span>
+              The tool is designed for specific general scenarios, and should
+              only be used by professionals qualified to construct a crowd
+              management plan who can determine suitability of the calculator
+              when modelling any given space.
+            </span>
+            <br />
+            <br />
+            <span>
+              When using the tool, the specific sections of the Green Guide
+              relevant to each input or calculation&nbsp; should be considered,
+              as well as the guide in its entirety. This context is vital in
+              determining whether the tool is appropriate for the situation at
+              hand.
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <script
+      data-section-id="navbar"
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script>
+  </body>
+</html>

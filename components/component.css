@@ -1,0 +1,9 @@
+.app-component-container {
+  display: flex;
+  position: relative;
+}
+.app-component-form {
+  width: 666px;
+  height: 332px;
+  display: flex;
+}
